@@ -8,10 +8,10 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from tqdm import tqdm
 
+
 plt.style.use('seaborn')
 plt.rc('text', usetex=True)
 plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
-
 
 def MSE_R2(poly_degrees, MSE_train, MSE_test, R2_train, R_test, title, fname):
     step = 3
@@ -307,16 +307,16 @@ def MSE_r2_beta_plot(order, M, r, b, n):
         plt.plot(poly_deg, R2_train_array, color='darkorange', label="Train")
         plt.plot(poly_deg, R2_test_array, color='dodgerblue', label="Test")
         plt.xlabel("Polynomial degree")
-        plt.ylabel(r"")
-        plt.title(r"")
+        plt.ylabel("r2")
+        plt.title("r2")
         plt.legend()
         plt.show()
 
         plt.plot(poly_deg, R2_train_array_scaled, color='darkorange', label="Train scaled")
         plt.plot(poly_deg, R2_test_array_scaled, color='dodgerblue', label="Test scaled")
         plt.xlabel("Polynomial degree")
-        plt.ylabel(r"")
-        plt.title(r"")
+        plt.ylabel("r2")
+        plt.title("r2")
         plt.legend()
         plt.show()
 
@@ -383,7 +383,9 @@ def bootstrap(x, y, z, seed, order, n_boostraps):
     plt.legend()
     plt.show()
 
-if _name__=="__main_":
+
+
+if _name__=="__main__":
     order = 14
     n = 500
     n_boostraps = 100
